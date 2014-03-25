@@ -2,10 +2,22 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
+angular.module('beerbarter.controllers', []).
+  controller('HomeCtrl', [function() {
 
   }])
-  .controller('MyCtrl2', [function() {
+  .controller('TradingCtrl', [function() {
+
+  }])
+  .controller('InventoryCtrl', [function() {
+
+  }])
+  .controller('ReviewsCtrl', [function() {
+
+  }])
+  .controller('NewsCtrl', [function() {
+
+  }])
+  .controller('LoginCtrl', [function() {
 
   }]);

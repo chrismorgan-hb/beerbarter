@@ -2,15 +2,31 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+angular.module('beerbarter', [
   'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
+  'beerbarter.filters',
+  'beerbarter.services',
+  'beerbarter.directives',
+  'beerbarter.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.when('/home', {
+      templateUrl: 'partials/home.html', 
+      controller: 'HomeCtrl'});
+  $routeProvider.when('/trading', {
+      templateUrl: 'partials/trading.html', 
+      controller: 'TradingCtrl'});
+  $routeProvider.when('/inventory', {
+      templateUrl: 'partials/inventory.html', 
+      controller: 'InventoryCtrl'});
+  $routeProvider.when('/reviews', {
+      templateUrl: 'partials/reviews.html', 
+      controller: 'ReviewsCtrl'});
+  $routeProvider.when('/news', {
+      templateUrl: 'partials/news.html', 
+      controller: 'NewsCtrl'});
+  $routeProvider.when('/login', {
+      templateUrl: 'partials/login.html', 
+      controller: 'LoginCtrl'});
+  $routeProvider.otherwise({redirectTo: '/home'});
 }]);

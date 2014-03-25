@@ -1,7 +1,7 @@
 {
-  "name": "angularjs-seed",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "name": "beerbarter",
+  "description": "An app for beer inventory management/trading",
+  "repository": "https://github.com/chrismorgan-hb/beerbarter",
   "devDependencies": {
     "phantomjs" : "~1.9",
     "karma" : "~0.10",
