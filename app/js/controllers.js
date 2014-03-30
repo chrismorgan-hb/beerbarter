@@ -9,7 +9,13 @@ angular.module('beerbarter.controllers', []).
   .controller('TradingCtrl', [function() {
 
   }])
+  .controller('OffersCtrl', [function() {
+
+  }])
   .controller('InventoryCtrl', [function() {
+
+  }])
+  .controller('WantlistCtrl', [function() {
 
   }])
   .controller('ReviewsCtrl', [function() {

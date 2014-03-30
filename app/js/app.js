@@ -16,9 +16,15 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/trading', {
       templateUrl: 'partials/trading.html', 
       controller: 'TradingCtrl'});
+  $routeProvider.when('/offers', {
+      templateUrl: 'partials/offers.html', 
+      controller: 'OffersCtrl'});
   $routeProvider.when('/inventory', {
       templateUrl: 'partials/inventory.html', 
       controller: 'InventoryCtrl'});
+  $routeProvider.when('/wantlist', {
+      templateUrl: 'partials/wantlist.html', 
+      controller: 'WantlistCtrl'});
   $routeProvider.when('/reviews', {
       templateUrl: 'partials/reviews.html', 
       controller: 'ReviewsCtrl'});
