@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Arrogant Bastard",
+    "brewery": "Stone",
+    "style": "American Strong Ale",
+    "abv": 8.9,
+    "rating": 5,
+    "vintage": 2008,
+    "quantity": 4
+  },
+  {
+    "id": 2,
+    "name": "Black Tuesday",
+    "brewery": "The Bruery",
+    "style": "Imperial Stout",
+    "abv": 18.9,
+    "rating": 5,
+    "vintage": 2013,
+    "quantity": 4
+  }
+]
