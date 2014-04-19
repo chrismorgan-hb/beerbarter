@@ -33,19 +33,19 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-	<td>arrogantbastard</td>
-	<td>San Diego, CA</td>
-	<td>Stone Imperial Russian Stout</td>
-	<td>Dogfish Head 120</td>
-	<td><a href="#">Make an Offer</a> | <a href="#">Remove</a></td>
-      </tr>
-      <tr>
-	<td>gregk</td>
-	<td>San Diego, CA</td>
-	<td>Evil Dead Red</td>
-	<td>Stone Vanilla Smoked Porter</td>
-	<td><a href="#">Make an Offer</a> | <a href="#">Remove</a></td>
+        <tr ng-repeat="match in matches">
+          <td>{{match.username}}</td>
+          <td>{{match.location}}</td>
+          <td> 
+            <div ng-repeat="beer in match.you_want">
+              {{beer.name}} ({{beer.quantity}})<br>
+            </div>
+          </td>
+          <td> 
+            <div ng-repeat="beer in match.they_want">
+              {{beer.name}} ({{beer.quantity}})<br>
+          </td>
+	        <td><a href="#">Make an Offer</a> | <a href="#">Remove</a></td>
       </tr>
       </tbody>
     </table>

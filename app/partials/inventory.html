@@ -89,25 +89,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-      	  <td>Arrogant Bastard</td>
-	  <td>Stone</td>
-	  <td>American Strong Ale</td>
-	  <td>8.9%</td>
-	  <!-- TODO: Rating stars -->
-	  <td>5</td>
-	  <td>2008</td>
-  	  <td>4</td>
-        </tr>
-        <tr>
-	  <td>Black Tuesday</td>
-	  <td>The Bruery</td>
-	  <td>Imperial Stout</td>
-	  <td>18.9%</td>
-	  <!-- TODO: Rating stars -->
-	  <td>5</td>
-	  <td>2013</td>
-  	  <td>4</td>
+        <tr ng-repeat="beer in beers">
+          <td>{{beer.name}}</td>
+	        <td>{{beer.brewery}}</td>
+	        <td>{{beer.style}}</td>
+	        <td>{{beer.abv}}%</td>
+	        <!-- TODO: Rating stars -->
+	        <td>{{beer.rating}}</td>
+	        <td>{{beer.vintage}}</td>
+  	      <td>{{beer.quantity}}</td>
         </tr>
         </tbody>
       </table>

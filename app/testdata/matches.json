@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "username": "arrogantbastard",
+    "location": "San Diego, CA",
+    "you_want": [
+      { "id": 1, "name": "Stone Imperial Russian Stout", "quantity": 1 },
+      { "id": 2, "name": "Stone Ruination IPA", "quantity": 2 }
+    ],
+    "they_want": [
+      { "id": 3, "name": "Dogfish Head 120 Minute IPA", "quantity": 1 },
+      { "id": 4, "name": "Magic Hat #9", "quantity": 2 }
+    ]
+  },
+  {
+    "id": 2,
+    "username": "gregk",
+    "location": "San Diego, CA",
+    "you_want": [
+      { "id": 5, "name": "Ninkasi Evil Dead Red", "quantity": 1 },
+      { "id": 6, "name": "Ninkasi Tricerahops", "quantity": 2 }
+    ],
+    "they_want": [
+      { "id": 7, "name": "Stone Vanilla Smoked Porter", "quantity": 1 },
+      { "id": 8, "name": "Stone Punishment", "quantity": 2 }
+    ]
+  }
+]
