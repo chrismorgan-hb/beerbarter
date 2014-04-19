@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Announcement!",
+    "body": "Bacon ipsum dolor sit amet chicken ground round ham turducken. Frankfurter venison andouille ribeye, boudin sausage landjaeger pig. Bresaola drumstick beef ribs, pastrami turkey venison corned beef.",
+    "link": "http://www.google.com",
+    "active_sec": 1397800000,
+    "expiration_sec": 1400000000,
+    "created_sec": 1397938774,
+    "modified_sec": 1397938774
+  },
+  {
+    "id": 2,
+    "title": "Another Announcement!",
+    "body": "Bacon ipsum dolor sit amet chicken ground round ham turducken. Frankfurter venison andouille ribeye, boudin sausage landjaeger pig. Bresaola drumstick beef ribs, pastrami turkey venison corned beef.",
+    "link": "http://www.bing.com",
+    "active_sec": 1397800000,
+    "expiration_sec": 1400000000,
+    "created_sec": 1397938774,
+    "modified_sec": 1397938774
+  }
+]

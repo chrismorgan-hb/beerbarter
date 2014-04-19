@@ -18,9 +18,12 @@
   <div class="row">
     <div class="col-md-8">
       <div class="jumbotron">
-        <h2>Announcement!</h2>
-        <p>Bacon ipsum dolor sit amet chicken ground round ham turducken. Frankfurter venison andouille ribeye, boudin sausage landjaeger pig. Bresaola drumstick beef ribs, pastrami turkey venison corned beef.
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+        <!-- TODO: Cycle through all active announcements, maybe carousel -->
+        <h2>{{announcements[0].title}}</h2>
+        <p>{{announcements[0].body}}</p>
+        <p><a class="btn btn-primary btn-lg" role="button" ng-href="{{announcements[0].link}}">
+          Learn more
+        </a></p>
       </div>
     </div>
     <div class="col-md-4">

@@ -3,8 +3,11 @@
 /* Controllers */
 
 angular.module('beerbarter.controllers', []).
-  controller('HomeCtrl', [function() {
-
+  controller('HomeCtrl', ['$scope', '$http',
+    function($scope, $http) {
+      $http.get('testdata/announcements.json').success(function(data) {
+        $scope.announcements = data;
+      });
   }])
   .controller('TradingCtrl', ['$scope', '$http', 
     function($scope, $http) {
