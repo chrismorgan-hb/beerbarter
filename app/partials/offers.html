@@ -79,16 +79,19 @@
       </tr>
       </thead>
       <tbody>
-      <tr data-toggle="modal" data-target="#offer0Modal">
-	      <td>uscsyco2004</td>
-        <td>Stone Arrogant Bastard (3)</td>
-        <td>Dogfish Head 120 Minute IPA (2)</td>
-      </tr>
-      <tr data-toggle="modal" data-target="#offer1Modal">
-	      <td>gregk</td>
-        <td>Bruery Black Tuesday (1)</td>
-        <td>Stone Imperial Russian Stout (3)</td>
-      </tr>
+        <!-- TODO: Figure out how to get the offerId into the tr -->
+        <tr ng-repeat="offer in offers">
+          <td>{{offer.username}}</td>
+          <td>
+            <div ng-repeat="beer in offer.you_get">
+              {{beer.name}} ({{beer.quantity}})<br>
+            </div>
+          </td>
+          <td>
+            <div ng-repeat="beer in offer.you_send">
+              {{beer.name}} ({{beer.quantity}})<br>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

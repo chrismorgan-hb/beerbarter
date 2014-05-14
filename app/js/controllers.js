@@ -13,8 +13,11 @@ angular.module('beerbarter.controllers', []).
         $scope.matches = data;
       });
   }])
-  .controller('OffersCtrl', [function() {
-
+  .controller('OffersCtrl', ['$scope', '$http', 
+    function($scope, $http) {
+      $http.get('testdata/offers.json').success(function(data) {
+        $scope.offers = data;
+      });
   }])
   .controller('AddBeerToInventoryModalCtrl', ['$scope', '$modalInstance',
     function($scope, $modalInstance) {
