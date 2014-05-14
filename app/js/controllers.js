@@ -53,11 +53,42 @@ angular.module('beerbarter.controllers', []).
         });
       }
   }])
-  .controller('WantlistCtrl', ['$scope', '$http', 
-    function($scope, $http) {
+  .controller('AddBeerToWantlistModalCtrl', ['$scope', '$modalInstance',
+    function($scope, $modalInstance) {
+      $scope.add = function() {
+        // TODO: actually add the beer
+        $modalInstance.close('add');
+      };
+      $scope.cancel = function() {
+        $modalInstance.dismiss('cancel');
+      };
+  }])
+  .controller('ShareWantlistModalCtrl', ['$scope', '$modalInstance',
+    function($scope, $modalInstance) {
+      $scope.done = function() {
+        $modalInstance.close('done');
+      };
+  }])
+  .controller('WantlistCtrl', ['$scope', '$http', '$modal',
+    function($scope, $http, $modal) {
       $http.get('testdata/wantlist.json').success(function(data) {
         $scope.beers = data;
       });
+
+      $scope.shareWantlist = function() {
+        var modalInstance = $modal.open({
+          templateUrl: 'partials/shareWantlistModal.html',
+          controller: 'ShareWantlistModalCtrl',
+          // TODO: how are we sharing, via URL or some other way?
+        });
+      }
+      
+      $scope.addBeer = function() {
+        var modalInstance = $modal.open({
+          templateUrl: 'partials/addBeerToWantlistModal.html',
+          controller: 'AddBeerToWantlistModalCtrl',
+        });
+      }
   }])
   .controller('ReviewsCtrl', [function() {
 
