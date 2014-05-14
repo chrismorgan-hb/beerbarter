@@ -15,49 +15,6 @@
       </div>
     </div>
   </div>
-  <!-- shareInventory Modal -->
-  <div class="modal fade" id="shareInventory" tabindex="-1" role="dialog" aria-labelledby="shareInventoryModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-            &times;
-          </button>
-          <h4 class="modal-title" id="shareInventoryModalLabel">Share Inventory</h4>
-        </div>
-        <div class="modal-body">
-          TODO
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">
-            Done
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- addBeer Modal -->
-  <div class="modal fade" id="addBeer" tabindex="-1" role="dialog" aria-labelledby="addBeerModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-            &times;
-          </button>
-          <h4 class="modal-title" id="addBeerModalLabel">Add Beer</h4>
-        </div>
-        <div class="modal-body">
-          TODO
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            Cancel
-          </button>
-          <button type="button" class="btn btn-primary">Add</button>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="row">
     <!--TODO: Figure out a way to get these to be on the same row but allow the
               table header to extend the full width of the page -->
@@ -69,10 +26,10 @@
     </div>
     <div class="col-md-2">
       <div class="btn-group">
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#shareInventory">
+        <button type="button" class="btn btn-default" ng-click="shareInventory()">
           SHARE
         </button>
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addBeer">
+        <button type="button" class="btn btn-default" ng-click="addBeer()">
           ADD
         </button>
       </div>
