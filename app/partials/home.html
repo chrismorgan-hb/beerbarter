@@ -18,9 +18,12 @@
   <div class="row">
     <div class="col-md-8">
       <div class="jumbotron">
-        <h2>Announcement!</h2>
-        <p>Bacon ipsum dolor sit amet chicken ground round ham turducken. Frankfurter venison andouille ribeye, boudin sausage landjaeger pig. Bresaola drumstick beef ribs, pastrami turkey venison corned beef.
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+        <!-- TODO: Cycle through all active announcements, maybe carousel -->
+        <h2>{{announcements[0].title}}</h2>
+        <p>{{announcements[0].body}}</p>
+        <p><a class="btn btn-primary btn-lg" role="button" ng-href="{{announcements[0].link}}">
+          Learn more
+        </a></p>
       </div>
     </div>
     <div class="col-md-4">
@@ -38,11 +41,11 @@
           Activity Feed
         </div>
         <div class="panel-body">
-	  <ul class="list-group">
+          <ul class="list-group">
             <li class="list-group-item">Cras justo odio</li>
-	    <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
             <li class="list-group-item">Morbi leo risus</li>
- 	  </ul>
+          </ul>
         </div>
       </div>
     </div>
@@ -52,11 +55,13 @@
           News Feed
         </div>
         <div class="panel-body">
-	  <ul class="list-group">
-            <li class="list-group-item">Cras justo odio <span class="label label-default">New</span></li>
-	    <li class="list-group-item">Dapibus ac facilisis in</li>
+          <ul class="list-group">
+            <li class="list-group-item">
+              Cras justo odio <span class="label label-default">New</span>
+            </li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
             <li class="list-group-item">Morbi leo risus</li>
- 	  </ul>
+          </ul>
         </div>
       </div>
     </div>
@@ -66,15 +71,15 @@
           Social Feed
         </div>
         <div class="panel-body">
-	  <div class="media">
-	    <a class="pull-left" href="#">
-	      <img class="media-object" width=32 height=32 src="img/cmorgan.jpg">
-  	    </a>
-	    <div class="media-body">
-	      <h4 class="media-heading">Chris Morgan</h4>
-	        <p>Cras justo odio</p> 
-	    </div>
-	  </div>
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" width=32 height=32 src="img/cmorgan.jpg">
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading">Chris Morgan</h4>
+              <p>Cras justo odio</p> 
+            </div>
+          </div>
         </div>
       </div>
     </div>

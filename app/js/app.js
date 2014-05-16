@@ -7,7 +7,8 @@ angular.module('beerbarter', [
   'beerbarter.filters',
   'beerbarter.services',
   'beerbarter.directives',
-  'beerbarter.controllers'
+  'beerbarter.controllers',
+  'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {
