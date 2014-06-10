@@ -4,6 +4,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('beerbarter', [
   'ngRoute',
+  'ga',
   'beerbarter.filters',
   'beerbarter.services',
   'beerbarter.directives',
