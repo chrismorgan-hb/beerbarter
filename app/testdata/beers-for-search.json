@@ -6,8 +6,7 @@
     "style": "American Strong Ale",
     "abv": 8.9,
     "rating": 5,
-    "vintage": 2008,
-    "quantity": 4
+    "vintage": 2008
   },
   {
     "id": 2,
@@ -16,7 +15,24 @@
     "style": "Imperial Stout",
     "abv": 18.9,
     "rating": 5,
-    "vintage": 2013,
-    "quantity": 4
+    "vintage": 2013
+  },
+  {
+    "id": 123,
+    "name": "90 Minute IPA",
+    "brewery": "Dogfish Head",
+    "style": "Double IPA",
+    "abv": 9,
+    "rating": 5,
+    "vintage": 2014
+  },
+  {
+    "id": 456,
+    "name": "Grey Monday",
+    "brewery": "The Bruery",
+    "style": "Imperial Stout",
+    "abv": 18.9,
+    "rating": 5,
+    "vintage": 2014
   }
 ]

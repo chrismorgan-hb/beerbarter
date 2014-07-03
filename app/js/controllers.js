@@ -28,14 +28,25 @@ angular.module('beerbarter.controllers', []).
       // TODO: Extract this into a common "AddBeer" modal controller
       $scope.add = function() {
         // TODO: Track add beer event via GA
+        var ret = [];
         for (var beerId in $scope.beersToAdd) {
           if ($scope.beersToAdd.hasOwnProperty(beerId)) {
-            // TODO: Actually add beers to inventory
-            console.log("Adding " + $scope.beersToAdd[beerId] + 
-                        " copies of beerId " + beerId);
+            if ($scope.beersToAdd[beerId] > 0) {
+              // TODO: Actually add beers to inventory
+              for (var i = 0; i < $scope.beersFound.length; i++) {
+                // TODO: This won't work if we don't keep the full beer info
+                // around (and show it to the user) for all beers with non-zero
+                // quantities.
+                var beer = $scope.beersFound[i];
+                if (beer.id == beerId) {
+                  beer.quantity = $scope.beersToAdd[beerId];
+                  ret.push(beer);
+                }
+              }
+            }
           }
         }
-        $modalInstance.close('add');
+        $modalInstance.close(ret);
       };
       $scope.cancel = function() {
         // TODO: Track cancel add beer event via GA
@@ -44,11 +55,11 @@ angular.module('beerbarter.controllers', []).
       $scope.search = function(val) {
         return $http.get('testdata/beers-for-search.json')
           .then(function(res) {
-            $scope.beers = [];
+            $scope.beersFound = [];
             angular.forEach(res.data, function(beer) {
-              $scope.beers.push(beer);
+              $scope.beersFound.push(beer);
             });
-            return $scope.beers;
+            return $scope.beersFound;
           });
       }
       $scope.beersToAdd = {};
@@ -91,6 +102,30 @@ angular.module('beerbarter.controllers', []).
           templateUrl: 'partials/addBeerToInventoryModal.html',
           controller: 'AddBeerToInventoryModalCtrl',
         });
+
+        modalInstance.result.then(function(addedBeers) {
+          for (var i = 0; i < addedBeers.length; i++) {
+            var exists = false;
+            for (var j = 0; j < $scope.beers.length; j++) {
+              if ($scope.beers[j].id == addedBeers[i].id) {
+                $scope.beers[j].quantity += addedBeers[i].quantity;
+                exists = true;
+              }
+            }
+            if (!exists) {
+              $scope.beers.push(addedBeers[i]);
+            }
+          }
+        });
+      }
+
+      $scope.removeLine = function(beerId) {
+        for (var i = 0; i < $scope.beers.length; i++) {
+          if ($scope.beers[i].id == beerId) {
+            $scope.beers.splice(i, 1);
+          }
+        }
+        // TODO: Actually remove from inventory
       }
   }])
   .controller('AddBeerToWantlistModalCtrl', ['$scope', '$modalInstance',

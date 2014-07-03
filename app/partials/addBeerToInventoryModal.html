@@ -23,7 +23,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr ng-repeat="beer in beers | filter:query">
+      <tr ng-repeat="beer in beersFound | filter:query">
         <td>{{beer.name}}</td>
         <td>{{beer.brewery}}</td>
         <td>{{beer.style}}</td>
@@ -44,7 +44,6 @@
       </tr>
       </tbody>
     </table>
-    TODO: Keep non-zero rows regardless of the search query
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary" ng-click="add()">Add</button>
