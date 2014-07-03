@@ -22,17 +22,47 @@ angular.module('beerbarter.controllers', []).
         $scope.offers = data;
       });
   }])
-  .controller('AddBeerToInventoryModalCtrl', ['$scope', '$modalInstance',
-    function($scope, $modalInstance) {
+  .controller('AddBeerToInventoryModalCtrl', [
+    '$scope', '$modalInstance', '$http',
+    function($scope, $modalInstance, $http) {
+      // TODO: Extract this into a common "AddBeer" modal controller
       $scope.add = function() {
         // TODO: Track add beer event via GA
-        // TODO: actually add the beer
+        for (var beerId in $scope.beersToAdd) {
+          if ($scope.beersToAdd.hasOwnProperty(beerId)) {
+            // TODO: Actually add beers to inventory
+            console.log("Adding " + $scope.beersToAdd[beerId] + 
+                        " copies of beerId " + beerId);
+          }
+        }
         $modalInstance.close('add');
       };
       $scope.cancel = function() {
         // TODO: Track cancel add beer event via GA
         $modalInstance.dismiss('cancel');
       };
+      $scope.search = function(val) {
+        return $http.get('testdata/beers-for-search.json')
+          .then(function(res) {
+            $scope.beers = [];
+            angular.forEach(res.data, function(beer) {
+              $scope.beers.push(beer);
+            });
+            return $scope.beers;
+          });
+      }
+      $scope.beersToAdd = {};
+      $scope.changeQty = function(beerId, qty) {
+        if (beerId in $scope.beersToAdd) {
+          if ($scope.beersToAdd[beerId] + qty <= 0) {
+            $scope.beersToAdd[beerId] = 0;
+          } else {
+            $scope.beersToAdd[beerId] += qty;
+          }
+        } else if (qty > 0) {
+          $scope.beersToAdd[beerId] = qty;
+        }
+      }
   }])
   .controller('ShareInventoryModalCtrl', ['$scope', '$modalInstance',
     function($scope, $modalInstance) {
